@@ -6,6 +6,7 @@ import NewPostModal from "../../components/modals/NewPostModal";
 import "../styles/Posts.css";
 import { Button, Spin } from "antd";
 import { fetchUser } from "../../thunks/usersSlice";
+import { NAVIGATE_BACK } from "../../constants";
 
 const Posts = () => {
   const { userId } = useParams();
@@ -24,7 +25,13 @@ const Posts = () => {
 
   return (
     <>
-      <h1>Posts by User {currentUser?.username}</h1>
+      <div className="upper-container">
+        <h1>Posts by User {currentUser?.username}</h1>
+        <Button style={{ right: 10 }} onClick={() => navigate(NAVIGATE_BACK)}>
+          Back
+        </Button>
+      </div>
+
       <Button onClick={() => setIsModalVisible(true)}>ADD NEW</Button>
       {loading ? (
         <Spin></Spin>

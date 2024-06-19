@@ -67,6 +67,7 @@ const PostDetail = () => {
       <br />
       {comments.map((comment) => (
         <CommentComponent
+          key={comment.id}
           name={comment.name}
           email={comment.email}
           body={comment.body}
@@ -74,9 +75,7 @@ const PostDetail = () => {
       ))}
       <hr />
       <div className="actions-container">
-        <Button info onClick={() => setIsEditModalVisible(true)}>
-          Edit
-        </Button>
+        <Button onClick={() => setIsEditModalVisible(true)}>Edit</Button>
         <Popconfirm
           title="Delete the task"
           onConfirm={handleDelete}
