@@ -1,0 +1,30 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: grey;
+}
+
+table tr:hover {
+  background-color: rgb(104, 104, 104);
+  color: black;
+}
+
+button {
+  margin: 0.5rem;
+}
